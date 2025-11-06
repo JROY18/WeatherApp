@@ -12,7 +12,43 @@ class WeatherApp(QWidget):
         self.get_weather_button = QPushButton("Get Weather",self)
         self.teamperature = QLabel("70F",self)
         self.emoji = QLabel("star",self)
-        self.description = QLabel("Sunny",self)
+        self.description_label = QLabel("Sunny",self)
+        self.initUI()
+
+    def initUI(self):
+        self.setWindowTitle("Weather App")
+        vbox = QVBoxLayout()
+        vbox.addWidget(self.city_label)
+        vbox.addWidget(self.city_input)
+        vbox.addWidget(self.get_weather_button)
+        vbox.addWidget(self.teamperature)
+        vbox.addWidget(self.emoji)
+        vbox.addWidget(self.description_label)
+        self.setLayout(vbox)
+
+        self.city_label.setAlignment(Qt.AlignCenter)
+        self.city_input.setAlignment(Qt.AlignCenter)
+        self.emoji.setAlignment(Qt.AlignCenter)
+        self.teamperature.setAlignment(Qt.AlignCenter)
+        self.description_label.setAlignment(Qt.AlignCenter)
+
+        self.city_label.setObjectName("city_label")
+        self.city_input.setObjectName("city_input")
+        self.emoji.setObjectName("emoji")
+        self.teamperature.setObjectName("temperature")
+        self.description_label.setObjectName("description_label")
+
+        self.setStyleSheet("""
+        QLabel, QPushButton{  
+                font-family: calibri;
+            }
+        QLabel{
+                font-size: 40px;
+                font-style: italic;
+            }
+        """)
+        
+
 
 if __name__ == "__main__":
         app = QApplication(sys.argv)
