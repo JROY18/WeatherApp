@@ -34,6 +34,7 @@ class WeatherApp(QWidget):
 
         self.city_label.setObjectName("city_label")
         self.city_input.setObjectName("city_input")
+        self.get_weather_button.setObjectName("get_weather_button")
         self.emoji.setObjectName("emoji")
         self.teamperature.setObjectName("temperature")
         self.description_label.setObjectName("description_label")
@@ -42,9 +43,16 @@ class WeatherApp(QWidget):
         QLabel, QPushButton{  
                 font-family: calibri;
             }
-        QLabel{
+        QLabel#city_label{
                 font-size: 40px;
                 font-style: italic;
+            }
+        QLineEdit#city_input{
+                font-size: 25px;
+            }
+        QPushButton#get_weather_button{
+                font-size: 20px;
+                font-weight: bold;
             }
         """)
         
